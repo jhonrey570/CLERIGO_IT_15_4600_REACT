@@ -5,7 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./components/login/login";
 
-// Create a simple Dashboard component or import it
+
 const Dashboard = () => {
   return <div className="Dashboard-theme"><h1>Dashboard</h1></div>;
 };
