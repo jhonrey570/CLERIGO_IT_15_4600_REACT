@@ -1,21 +1,24 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./components/login/login";
 
-function App() {
-  const [count, setCount] = useState(0);
+// Create a simple Dashboard component or import it
+const Dashboard = () => {
+  return <div className="Dashboard-theme"><h1>Dashboard</h1></div>;
+};
 
+function App() {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element= {<div className="Login-theme"><Login /> </div>} />
-    //     <Route path="/Dashboard" element= {<div className="Dashboard-theme"><Dashboard /> </div>} />
-    //     <Route path="*" element= {<Navigatate to="/" />} />
-    //   </Routes>
-    // </BrowserRouter>
-    <Login />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div className="Login-theme"><Login /></div>} />
+        <Route path="/Dashboard" element={<div className="Dashboard-theme"><Dashboard /></div>} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
